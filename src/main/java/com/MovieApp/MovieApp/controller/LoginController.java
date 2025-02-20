@@ -1,41 +1,58 @@
-package com.MovieApp.MovieApp.controller;
+package com.example.movie.controller;
 
-import java.io.IOException;
+import org.springframework.stereotype.Controller;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.MovieApp.MovieApp.Entity.User;
-import com.MovieApp.MovieApp.Service.UserService;
+import com.example.movie.Entity.Movie;
+import com.example.movie.Entity.User;
+import com.example.movie.Service.LoginService;
+import com.example.movie.Service.MovieService;
 
-import jakarta.servlet.http.HttpServletResponse;
+
 
 @Controller
-@RequestMapping("movieapp")
+@RequestMapping("/tktbooking")
 public class LoginController {
+
+	@Autowired
+	LoginService loginService;
 	
 	@Autowired
-    private UserService userService;
-@GetMapping("/login")
-public String Login() {
-	return"login";
-}
+	MovieService movieService;
 
-@PostMapping("/auth")
-public void login(@RequestParam("username") String phoneNumber, @RequestParam("password") String password ,HttpServletResponse rs) throws IOException {
-	 User loggedInUser = userService.authenticate(phoneNumber, password);
-	 if (loggedInUser != null) {
-        
-         rs.sendRedirect("/dashboard");
-     } else {
-     
-         rs.sendRedirect("/movieapp/login");
-     }
+	@GetMapping("/login")
+	public String login() {
 
-}
-}
+		return "login";
+	}
+
+	@GetMapping("/signup")
+	public String signup() {
+
+		return "register";
+	}
+
+	@PostMapping("/auth")
+	public String authenticate(@RequestParam("username") String username, @RequestParam("password") String password,
+			Model model) {
+		User loggedInUser = loginService.authenticateUser(username, password);
+		if (loggedInUser != null) {
+			model.addAttribute("currUser", loggedInUser);
+			List<Movie> movieList = movieService.getAllMovies();//new ArrayList<Movie>();
+			model.addAttribute("movies", movieList);
+			// model.addAttribute("upcomingMovies", movieList);
+			return "dashboard";
+		} else {
+			return "login";
+		}
+	}
+
