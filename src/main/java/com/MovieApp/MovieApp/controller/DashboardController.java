@@ -1,50 +1,79 @@
-package com.MovieApp.MovieApp.controller;
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .movie-card {
+            background: white;
+            margin: 15px;
+            width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+        }
+        .movie-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .movie-info {
+            paddin**g: 10px;
+        }
+        .movie-info h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .movie-info p {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .movie-info .rating {
+            color: #f39c12;
+        }
+        .movie-info .genre {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-import java.util.ArrayList;
+    <h1 style="text-align:center; padding: 20px 0;">Movies List Dashboard</h1>
 
-import java.util.List;
+    <div class="container">
+        <!-- Loop through the list of movies -->
+        <c:forEach var="movie" items="${movies}">
+            <div class="movie-card">
+             <a href="${pageContext.request.contextPath}/tktbooking/movie/${movie.movieId}">
+                <img src="${movie.image_url}" alt="${movie.title}" class="movie-thumbnail">
+                <div class="movie-info">
+                    <h3>${movie.title}</h3>
+                    <p><strong>Runtime:</strong> ${movie.duration} mins</p>
+                    <p><strong>Release Date:</strong> ${movie.releaseDate}</p>
+                    <p><strong>Average Rating:</strong> <span class="rating">${movie.rating}</span></p>
+                    <p><strong>Language:</strong> ${movie.language}</p>
+                    <p><strong class="genre">Genre:</strong> ${movie.genre}</p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 
-import com.MovieApp.MovieApp.Entity.Movie;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-
-@Controller
-public class DashboardController {
-
-	private List<Movie> movieList;
-
-	public DashboardController() {
-		movieList = new ArrayList<>();
-
-		movieList.add(new Movie(101,"https://upload.wikimedia.org/wikipedia/en/1/17/Sarkaru_Vaari_Paata.jpg",
-				"Sarkaru Vaari Paata", "4.3"));
-
-		movieList.add(new Movie(102,"https://upload.wikimedia.org/wikipedia/en/5/56/Jalsa_poster.jpg", "Jalsa", "4.3"));
-		movieList.add(new Movie(103,"https://upload.wikimedia.org/wikipedia/en/6/6c/Lucky_Baskhar_film_poster.jpg",
-				"Lucky Baskhar", "4.3"));
-		movieList.add(
-				new Movie(104,"https://upload.wikimedia.org/wikipedia/en/d/d6/Sarrainodu_poster.jpg", "Sarrainodu", "4.3"));
-		movieList.add(new Movie(105,
-				"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gabbar-singh-telugu-et00007159-1665126274.jpg",
-				"Gabbar Singh", "4.3"));
-		movieList.add(new Movie(106,
-				"https://upload.wikimedia.org/wikipedia/en/3/3d/Aarya_Telugu_Movie.jpg",
-				"aarya", "4.3"));
-		movieList.add(new Movie(107,
-				"https://upload.wikimedia.org/wikipedia/en/2/28/Ala_Vaikunthapurramuloo.jpeg",
-				"Ala_Vaikunthapurramuloo", "4.3"));
-		movieList.add(new Movie(108,
-				"https://upload.wikimedia.org/wikipedia/en/5/5a/Radhe_Shyam.jpg",
-				"Radhe_Shyam", "4.3"));
-
-	}
-
-	@GetMapping("/dashboard")
-	public String dashboard(Model model) {
-	    model.addAttribute("movieList", movieList);
-	    return "dashboard"; 
-	}
-
-}
+</body>
+</html>
