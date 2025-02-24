@@ -1,0 +1,30 @@
+INSERT INTO movie_details (title, description, release_date, duration, language, genre, rating, created_at, updated_by)
+VALUES
+('Inception', 'A mind-bending thriller by Christopher Nolan, where a thief uses dream-sharing technology to steal secrets from deep within a person\'s subconscious.', '2010-07-16', 148, 'English', 'Sci-Fi', 9, NOW(), NOW()),
+
+
+('The Dark Knight', 'Batman sets out to dismantle the remaining criminal organizations that plague Gotham. But he soon faces a criminal mastermind known as The Joker.', '2008-07-18', 152, 'English', 'Action', 9, NOW(), NOW()),
+
+
+('The Shawshank Redemption', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', '1994-09-22', 142, 'English', 'Drama', 10, NOW(), NOW()),
+
+
+('The Godfather', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', '1972-03-24', 175, 'English', 'Crime', 10, NOW(), NOW()),
+
+
+('The Matrix', 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.', '1999-03-31', 136, 'English', 'Action', 8, NOW(), NOW()),
+
+
+('Titanic', 'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.', '1997-12-19', 195, 'English', 'Romance', 7, NOW(), NOW()),
+
+
+('Gladiator', 'A betrayed Roman general sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.', '2000-05-05', 155, 'English', 'Action', 8, NOW(), NOW()),
+
+
+('Forrest Gump', 'The presidencies of Kennedy and Johnson, the events of Vietnam, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an extraordinary life story.', '1994-07-06', 142, 'English', 'Drama', 9, NOW(), NOW()),
+
+
+('Avatar', 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', '2009-12-18', 162, 'English', 'Action', 8, NOW(), NOW()),
+
+
+('The Lion King', 'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.', '1994-06-15', 88, 'English', 'Animation', 9, NOW(), NOW());
