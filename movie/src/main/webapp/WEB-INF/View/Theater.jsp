@@ -1,49 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Booking - Seat Selection</title>
-    <link rel="stylesheet" href="Styles/theatreInfo.css">
-</head>
-<body>
-    <header>
-        <a href="#" class="logo">Logo</a>
-        <div class="nav-links">
-            <input type="text" placeholder="Search Movie">
-            <input type="text" placeholder="Search Theatre">
-        </div>
-        <button class="profile-btn">Profile</button>
-    </header>
-
-    <main class="main-container">
-        <div class="content-container">
-            <div class="left-section">
-                <div class="box"></div>
-                <div class="info">Movie info</div>
+<div class="theater">
+            <h3>Cinepolis: Sreekanya Cineglitz, Madhurawada</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>01:10 PM, 01:35 PM, 04:20 PM, 07:30 PM, 07:50 PM, 10:40 PM</span>
+                </p>
+                <p>Cancellation: Non-cancellable</p>
             </div>
-            <div id="seats-selection">
-                <h4>Select Date:</h4>
-                <input type="date">
-                <h4>Select Show Times:</h4>
-                <div class="dropdown-container">
-                    <select>
-                        <option value="">Select Show Time</option>
-                        <option value="theatre1">Showtime 1</option>
-                        <option value="theatre2">Showtime 2</option>
-                        <option value="theatre3">Showtime 3</option>
-                    </select>
-                </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
             </div>
+            <button class="button">Book Tickets</button>
         </div>
-        <div class="button-container">
-            <button class="button">Continue</button>
+
+        <!-- Theater 2 -->
+        <div class="theater">
+            <h3>AVR Saptagiri 2K: Chittivalasa</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>02:30 PM, 06:30 PM, 09:30 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 My Movie Booker</p>
-    </footer>
-</body>
-</html>
+        <!-- Theater 3 -->
+        <div class="theater">
+            <h3>INOX: CMR Central, Gajuwaka</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>01:30 PM, 07:40 PM, 10:50 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
+        </div>
 
+        <!-- Theater 4 -->
+        <div class="theater">
+            <h3>INOX: CMR Central, Maddilapalem</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>01:20 PM, 04:30 PM, 07:40 PM, 10:50 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
+        </div>
+
+        <!-- Theater 5 -->
+        <div class="theater">
+            <h3>INOX: Varun Beach, Beach Road</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>01:20 PM, 04:30 PM, 07:40 PM, 10:50 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
+        </div>
+
+        <!-- Theater 6 -->
+        <div class="theater">
+            <h3>INOX: Vizag Chitralaya Mall</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>01:20 PM, 04:30 PM, 07:40 PM, 10:50 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
+        </div>
+
+        <!-- Theater 7 -->
+        <div class="theater">
+            <h3>Jagadamba 70MM Premium Laser 4K: Vizag</h3>
+            <div class="theater-info">
+                <p>Language: Telugu - 2D</p>
+                <p>Showtimes: 
+                    <span>02:30 PM, 06:30 PM, 10:00 PM</span>
+                </p>
+                <p>Cancellation: Available</p>
+            </div>
+            <div class="showtimes">
+                <p>Food & Beverage available</p>
+            </div>
+            <button class="button">Book Tickets</button>
+        </div>
+    </div>
