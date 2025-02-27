@@ -1,5 +1,7 @@
 package com.example.movie.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class TheaterRepositroy {
+@Repository
+public interface  TheaterRepositroy extends JpaRepository<Theater,Integer>
 
 }
